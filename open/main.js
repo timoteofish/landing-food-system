@@ -1,7 +1,21 @@
 const landingImage = document.querySelector(".landing__image");
 const landingLoader = document.querySelector(".landing__loader");
+const curtain = document.querySelector(".curtain");
+let redirectTimer;
+let navigationTimer;
 
-const revealLoader = () => landingLoader?.classList.add("is-visible");
+const redirectToMain = () => {
+  window.location.replace("../main/");
+};
+
+const revealLoader = () => {
+  landingLoader?.classList.add("is-visible");
+  window.clearTimeout(redirectTimer);
+  redirectTimer = window.setTimeout(() => {
+    curtain?.classList.add("curtain--closing");
+    navigationTimer = window.setTimeout(redirectToMain, 700);
+  }, 1400);
+};
 
 const revealImage = () => {
   requestAnimationFrame(() => {
