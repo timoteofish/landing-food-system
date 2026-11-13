@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+}
+
+main#inicio {
+    min-height: 70vh;
+    padding: 48px 24px;
+    background: #fff;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #c90018 #f1f1f1;
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+html::-webkit-scrollbar-thumb {
+    border: 2px solid #f1f1f1;
+    border-radius: 999px;
+    background: #c90018;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #a80014;
+}
+
+/* Base compartilhada da página. */

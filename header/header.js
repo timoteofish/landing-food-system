@@ -1,11 +1,11 @@
-const brand = document.querySelector('.brand');
-const brandIcon = document.querySelector('.brand img');
-const brandLetters = [...document.querySelectorAll('.brand-name span')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 const pulseColor = '#c90018';
 let animationTimer;
 let activeAnimations = [];
+let brand;
+let brandIcon;
+let brandLetters = [];
 
 function animateIconNudge() {
     return brandIcon.animate(
@@ -59,8 +59,6 @@ async function runBrandAnimation() {
     }
 }
 
-runBrandAnimation();
-
 reducedMotion.addEventListener('change', () => {
     if (reducedMotion.matches) {
         window.clearTimeout(animationTimer);
@@ -71,7 +69,14 @@ reducedMotion.addEventListener('change', () => {
     }
 });
 
-brand?.addEventListener('click', () => {
+function setupBrand() {
+    brand = document.querySelector('.brand');
+    brandIcon = document.querySelector('.brand img');
+    brandLetters = [...document.querySelectorAll('.brand-name span')];
+    if (!brand || !brandIcon) return;
+
+    runBrandAnimation();
+    brand.addEventListener('click', () => {
     if (reducedMotion.matches) return;
 
     const clickAnimation = brandIcon.animate(
@@ -86,22 +91,31 @@ brand?.addEventListener('click', () => {
     clickAnimation.finished.then(() => {
         brandLetters.reduce((sequence, letter) => sequence.then(() => animateLetter(letter).finished), Promise.resolve());
     }).catch(() => {});
-});
+    });
+}
 
-const menuToggle = document.querySelector('.menu-toggle');
-const headerMenu = document.querySelector('.header-menu');
+function setupMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const headerMenu = document.querySelector('.header-menu');
+    if (!menuToggle || !headerMenu) return;
 
-menuToggle?.addEventListener('click', () => {
+    menuToggle.addEventListener('click', () => {
     const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', String(!isOpen));
     menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
     headerMenu?.classList.toggle('is-open', !isOpen);
-});
+    });
 
-headerMenu?.querySelectorAll('a').forEach((link) => {
+    headerMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
         menuToggle?.setAttribute('aria-expanded', 'false');
         menuToggle?.setAttribute('aria-label', 'Abrir menu');
         headerMenu.classList.remove('is-open');
     });
-});
+    });
+}
+
+
+
+setupBrand();
+setupMenu();
