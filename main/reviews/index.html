@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Food System</title>
+</head>
+<body>
+    <div class="page-curtain" aria-hidden="true">
+        <span class="page-curtain__panel page-curtain__panel--left"></span>
+        <span class="page-curtain__panel page-curtain__panel--right"></span>
+    </div>
+    <header class="header">
+        <a class="brand" href="../home/index.html" aria-label="Food System, início">
+             <img src="../assets/icon.webp" alt="">
+            <span class="brand-name" aria-label="Food System">
+                <span>F</span><span>o</span><span>o</span><span>d</span>
+                <span>&nbsp;</span><span>S</span><span>y</span><span>s</span><span>t</span><span>e</span><span>m</span>
+            </span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="header-menu" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="header-menu" id="header-menu">
+            <nav class="navigation" aria-label="Navegação principal">
+                <a href="../home/index.html">Início</a>
+                <a href="../resources/index.html">Recursos</a>
+                <a href="../comparison/index.html">Comparativo</a>
+                <a href="../testimonials/index.html">Depoimentos</a>
+                <a href="../reviews/index.html">Avaliações</a>
+                <a href="../faq/index.html">Dúvidas</a>
+            </nav>
+            <button class="contact-button" type="button">Entre em contato</button>
+        </div>
+    </header>
+    <main id="reviews">
+    </main>
+
+    <dialog class="contact-panel" id="contact-panel" aria-labelledby="contact-title">
+        <div class="contact-panel__header">
+            <h2 id="contact-title">Entre em contato</h2>
+            <button class="contact-panel__close" type="button" aria-label="Fechar painel">&times;</button>
+        </div>
+        <form class="contact-form">
+            <label for="business-name">Nome do negócio</label>
+            <input id="business-name" name="business-name" type="text" placeholder="Digite o nome do negócio">
+            <label for="contact-method">Forma de contato</label>
+            <select id="contact-method" name="contact-method">
+                <option value="email">E-mail</option>
+                <option value="phone">Telefone</option>
+                <option value="whatsapp">WhatsApp</option>
+            </select>
+            <div class="contact-email-group" id="contact-email-group">
+                <label for="email-address">E-mail</label>
+                <input id="email-address" name="email-address" type="email" placeholder="Digite seu e-mail">
+            </div>
+            <div class="contact-number-group" id="contact-number-group">
+                <label for="contact-value">Número de telefone</label>
+                <select id="country-code" name="country-code" aria-label="Código do país">
+                    <option value="+55">+55</option>
+                    <option value="+1">+1</option>
+                    <option value="+351">+351</option>
+                    <option value="+34">+34</option>
+                    <option value="+33">+33</option>
+                    <option value="+44">+44</option>
+                    <option value="+49">+49</option>
+                    <option value="+39">+39</option>
+                    <option value="+81">+81</option>
+                    <option value="+86">+86</option>
+                    <option value="+52">+52</option>
+                    <option value="+54">+54</option>
+                    <option value="+56">+56</option>
+                    <option value="+57">+57</option>
+                    <option value="+58">+58</option>
+                    <option value="+91">+91</option>
+                    <option value="+7">+7</option>
+                    <option value="+27">+27</option>
+                    <option value="+61">+61</option>
+                    <option value="+82">+82</option>
+                </select>
+                <input id="contact-value" name="contact-value" type="text" placeholder="Digite seu contato">
+            </div>
+            <button class="contact-submit" type="submit">Enviar</button>
+        </form>
+    </dialog>
+    <footer class="site-footer">
+        <div class="footer-bar">
+            <span class="copyright">&copy; 2026 Food System</span>
+            <span class="footer-separator" aria-hidden="true">|</span>
+            <button class="footer-link" type="button" data-legal-tab="termos" aria-expanded="false">Termos de Uso</button>
+            <span class="footer-separator" aria-hidden="true">|</span>
+            <button class="footer-link" type="button" data-legal-tab="privacidade" aria-expanded="false">Política de Privacidade</button>
+        </div>
+        <dialog class="legal-panel" id="legal-panel" aria-labelledby="legal-title">
+            <div class="legal-panel-heading">
+                <h2 id="legal-title"></h2>
+                <button class="legal-close" type="button" aria-label="Fechar conteúdo">Fechar</button>
+            </div>
+            <div class="legal-content" id="legal-content"></div>
+        </dialog>
+    </footer>
+    <script src="main.js" defer></script>
+</body>
+</html>

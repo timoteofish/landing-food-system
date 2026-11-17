@@ -5,7 +5,7 @@ let redirectTimer;
 let navigationTimer;
 
 const redirectToMain = () => {
-  window.location.replace("../main/");
+  window.location.replace("../main/home/index.html");
 };
 
 const revealLoader = () => {
