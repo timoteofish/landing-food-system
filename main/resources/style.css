@@ -461,6 +461,16 @@ html::-webkit-scrollbar-thumb:hover {
     font: inherit;
 }
 
+.contact-form select {
+    padding-right: 38px;
+    appearance: none;
+    background-color: #fff;
+    background-image: linear-gradient(45deg, transparent 50%, #c90018 50%), linear-gradient(135deg, #c90018 50%, transparent 50%);
+    background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
 .contact-submit {
     margin-top: 12px;
     padding: 11px 16px;
