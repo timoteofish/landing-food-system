@@ -60,36 +60,15 @@ main {
 }
 
 .video-box {
-    display: flex;
+    display: block;
     width: min(100%, 900px);
     aspect-ratio: 16 / 9;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
     border: 6px solid #fff;
     border-radius: 16px;
     outline: 3px solid #c90018;
     background: #c90018;
     color: #fff;
     box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
-}
-
-.video-box__play {
-    display: grid;
-    width: 64px;
-    height: 64px;
-    place-items: center;
-    padding-left: 4px;
-    border-radius: 50%;
-    background: #fff;
-    color: #c90018;
-    font-size: 28px;
-}
-
-.video-box__label {
-    font-size: 18px;
-    font-weight: 700;
 }
 
 html {
@@ -431,6 +410,7 @@ html::-webkit-scrollbar-thumb:hover {
     border: 0;
     border-radius: 12px;
     color: #252525;
+    background: #fff;
     box-shadow: 0 16px 48px rgb(0 0 0 / 25%);
 }
 
@@ -443,23 +423,26 @@ html::-webkit-scrollbar-thumb:hover {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 20px;
+    margin: -24px -24px 20px;
+    padding: 16px 24px;
+    border-radius: 12px 12px 0 0;
+    background: #c90018;
 }
 
 .contact-panel__header h2 {
     margin: 0;
-    color: #c90018;
+    color: #fff;
     font-size: 22px;
 }
 
 .contact-panel__close {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border: 0;
     border-radius: 50%;
-    background: #c90018;
+    background: transparent;
     color: #fff;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1;
     cursor: pointer;
 }
